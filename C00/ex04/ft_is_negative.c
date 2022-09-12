@@ -6,7 +6,7 @@
 /*   By: svilaca- <svilaca-@student42.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 22:33:27 by svilaca-          #+#    #+#             */
-/*   Updated: 2022/09/08 22:33:27 by svilaca-         ###   ########.fr       */
+/*   Updated: 2022/09/12 18:02:19 by svilaca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,4 @@ void	ft_is_negative(int n)
 		write (1, "N", 1);
 	else
 		write (1, "P", 1);
-}
-
-int	main(void)
-{
-	int	n;
-
-	n = -1;
-	ft_is_negative(n);
-	return (0);
 }

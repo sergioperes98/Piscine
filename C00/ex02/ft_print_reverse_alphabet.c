@@ -6,7 +6,7 @@
 /*   By: svilaca- <svilaca-@student42.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 20:01:53 by svilaca-          #+#    #+#             */
-/*   Updated: 2022/09/08 20:01:53 by svilaca-         ###   ########.fr       */
+/*   Updated: 2022/09/12 18:00:25 by svilaca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,4 @@ void	ft_print_reverse_alphabet(void)
 		write (1, &i, 1);
 		i--;
 	}
-}
-
-int	main(void)
-{
-	ft_print_reverse_alphabet();
-	return (0);
 }

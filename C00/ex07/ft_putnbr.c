@@ -5,47 +5,71 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: svilaca- <svilaca-@student42.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/09 15:51:22 by svilaca-          #+#    #+#             */
-/*   Updated: 2022/09/09 15:51:22 by svilaca-         ###   ########.fr       */
+/*   Created: 2022/09/12 17:33:08 by svilaca-          #+#    #+#             */
+/*   Updated: 2022/09/12 23:31:04 by svilaca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putnbr(int nb)
+void	ft_putchar(char c)
 {
-	int	i;
-	int	j;
-	int	k;
-	int	dig;
-	int	l;
-	
-	l = 0;
-	i = 0;
-	j = 0;
-	k = 0;
-	dig = 0;
-	l = nb + '0';
-	write (1, &l, 1);
-	while (nb >= 1)
-	{
-		dig = nb % 10;
-		nb /= 10;
-		i++;
-	}
-	j = i + '0';
-	write (1, &j, 1);
-	while (i <= 1)
-	{
-		nb = nb * 10;
-		k = nb + '0';
-		write (1, &k, 1);
-	}
-	
+	write(1, &c, 1);
 }
 
-int	main(void)
+int	length_nbr(int nb)
 {
-	ft_putnbr(3);
-	return (0);
+	int	i;
+
+	i = 1;
+	while (nb / 10 > 0)
+	{
+		nb = nb / 10;
+		i = i * 10;
+	}
+	return (i);
+}
+
+void	positive_nbr(int nb)
+{
+	int	length;
+
+	length = length_nbr(nb);
+	while (length >= 1)
+	{
+		ft_putchar(nb / length + '0');
+		nb = nb % length;
+		length = length / 10;
+	}
+}
+
+void	negative_nbr(int nb)
+{
+	int	length;
+
+	nb = -nb;
+	length = length_nbr(nb);
+	write(1, "-", 1);
+	while (length >= 1)
+	{
+		ft_putchar(nb / length + '0');
+		nb = nb % length;
+		length = length / 10;
+	}
+}
+
+void	ft_putnbr(int nb)
+{
+	if (nb >= 0 && nb <= 2147483647)
+	{
+		positive_nbr(nb);
+	}
+	else if (nb < 0 && nb >= -2147483647)
+	{
+		negative_nbr(nb);
+	}
+	else if (nb == -2147483648)
+	{
+		write(1, "-2147483648", 11);
+	}
 }

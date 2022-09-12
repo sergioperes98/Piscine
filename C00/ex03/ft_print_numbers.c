@@ -6,7 +6,7 @@
 /*   By: svilaca- <svilaca-@student42.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 21:24:43 by svilaca-          #+#    #+#             */
-/*   Updated: 2022/09/08 21:24:43 by svilaca-         ###   ########.fr       */
+/*   Updated: 2022/09/12 18:01:24 by svilaca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,4 @@ void	ft_print_numbers(void)
 		write (1, &i, 1);
 		i++;
 	}
-}
-
-int	main(void)
-{
-	ft_print_numbers();
-	return (0);
 }
