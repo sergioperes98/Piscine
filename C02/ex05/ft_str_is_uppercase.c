@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: svilaca- <svilaca-@student42.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/14 17:05:16 by svilaca-          #+#    #+#             */
-/*   Updated: 2022/09/18 21:44:11 by svilaca-         ###   ########.fr       */
+/*   Created: 2022/09/19 16:45:34 by svilaca-          #+#    #+#             */
+/*   Updated: 2022/09/19 20:29:16 by svilaca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <stdio.h>
-//#include <stdlib.h>
 
-void	ft_swap(int *a, int *b)
+int	ft_str_is_uppercase(char *str)
 {
-	int	aux;
+	int	i;
 
-	aux = *a;
-	*a = *b;
-	*b = aux;
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] < 65 || str[i] > 90)
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
 /*int	main(void)
 {
-	int	nb1;
-	int	nb2;
+	char	str[] = "OLa";
 
-	nb1 = -45;
-	nb2 = 105;
-	ft_swap(&nb1, &nb2);
-	printf("%d\n", nb1);
-	printf("%d", nb2);
+	printf("%d", ft_str_is_uppercase(str));
 	return (0);
 }*/

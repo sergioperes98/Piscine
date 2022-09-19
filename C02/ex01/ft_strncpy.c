@@ -1,36 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: svilaca- <svilaca-@student42.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/14 17:05:16 by svilaca-          #+#    #+#             */
-/*   Updated: 2022/09/18 21:44:11 by svilaca-         ###   ########.fr       */
+/*   Created: 2022/09/18 19:36:15 by svilaca-          #+#    #+#             */
+/*   Updated: 2022/09/19 16:42:11 by svilaca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <stdio.h>
-//#include <stdlib.h>
 
-void	ft_swap(int *a, int *b)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	int	aux;
+	unsigned int	i;
 
-	aux = *a;
-	*a = *b;
-	*b = aux;
+	i = 0;
+	while (i < n && src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
+	return (dest);
 }
 
 /*int	main(void)
 {
-	int	nb1;
-	int	nb2;
+	char	src[5] = "Olaa";
+	char	dest[7];
 
-	nb1 = -45;
-	nb2 = 105;
-	ft_swap(&nb1, &nb2);
-	printf("%d\n", nb1);
-	printf("%d", nb2);
+	ft_strncpy(dest, src, 7);
+	printf("%s", ft_strncpy(dest, src, 7));
 	return (0);
 }*/
