@@ -1,48 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: svilaca- <svilaca-@student42.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/20 17:00:03 by svilaca-          #+#    #+#             */
-/*   Updated: 2022/09/24 20:46:43 by svilaca-         ###   ########.fr       */
+/*   Created: 2022/09/25 23:01:56 by svilaca-          #+#    #+#             */
+/*   Updated: 2022/09/26 00:49:35 by svilaca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 //#include <stdio.h>
-//#include <string.h>
 
-int	ft_strcmp(char *s1, char *s2)
+int	*ft_range(int min, int max)
 {
 	int	i;
+	int	*arr;
+	int	size;
+	int	limit;
 
 	i = 0;
-	while (s1[i] != '\0' || s2[i] != '\0')
+	size = max - min;
+	limit = max - 1;
+	arr = malloc(sizeof(int) * size);
+	while (size > 0)
 	{
-		if (s1[i] < s2[i])
-		{
-			return (s1[i] - s2[i]);
-			break ;
-		}
-		else if (s1[i] > s2[i])
-		{
-			return (s1[i] - s2[i]);
-			break ;
-		}
+		arr[i] = limit ;
 		i++;
+		limit--;
+		size--;
 	}
-	return (0);
+	return (arr);
 }
 
 /*int	main(void)
 {
+	int	min;
+	int	max;
+	int	*arr;
 	int	i;
-	char	str1[] = "Ola ";
-	char	str2[] = "Ola";
-	
-	i = ft_strcmp(str1, str2);
-	//i = strcmp(str1, str2);
-	printf("%d", i);
+
+	min = 3;
+	max = 11;
+	arr = ft_range(min, max);
+	i = 0;
+	while (arr[i])
+	{
+		printf("%d", arr[i]);
+		i++;
+	}
 	return (0);
 }*/

@@ -1,48 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: svilaca- <svilaca-@student42.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/20 17:00:03 by svilaca-          #+#    #+#             */
-/*   Updated: 2022/09/24 20:46:43 by svilaca-         ###   ########.fr       */
+/*   Created: 2022/09/25 21:44:41 by svilaca-          #+#    #+#             */
+/*   Updated: 2022/09/25 22:59:49 by svilaca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 //#include <stdio.h>
 //#include <string.h>
 
-int	ft_strcmp(char *s1, char *s2)
+char	*ft_strdup(char *src)
 {
-	int	i;
+	int		i;
+	int		j;
+	char	*dst;
 
 	i = 0;
-	while (s1[i] != '\0' || s2[i] != '\0')
-	{
-		if (s1[i] < s2[i])
-		{
-			return (s1[i] - s2[i]);
-			break ;
-		}
-		else if (s1[i] > s2[i])
-		{
-			return (s1[i] - s2[i]);
-			break ;
-		}
+	j = 0;
+	while (src[i])
 		i++;
+	dst = malloc(sizeof(char) * (i + 1));
+	while (i > 0)
+	{
+		dst[j] = src[j];
+		j++;
+		i--;
 	}
-	return (0);
-}
+	dst[j] = '\0';
+	return (dst);
+}	
 
 /*int	main(void)
 {
-	int	i;
-	char	str1[] = "Ola ";
-	char	str2[] = "Ola";
-	
-	i = ft_strcmp(str1, str2);
-	//i = strcmp(str1, str2);
-	printf("%d", i);
+	char	src[] = "Ola";
+	char	*dst;
+
+	dst = ft_strdup(src);
+	printf("%s", dst);
+	return (0);
+}*/
+
+/*int	main(void)
+{
+	char	string[] = "Ola";
+	char	*target;
+
+	target = strdup(string);
+	printf("%s", target);
 	return (0);
 }*/
